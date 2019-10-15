@@ -1,0 +1,51 @@
+<!DCOTYPE html>
+    <html>
+        <head>
+            <title>No Man's Sky Calculator</title>
+            <script>
+                var $ = function(id) {
+                    return document.getElementById(id);
+                };
+
+                var calculateTotal = function(carbon, condensedcarbon, oxygen) {
+                    var total = ((12*carbon) + (24*condensedcarbon) + (34*oxygen))
+                    total = total.toFixed(1);
+                    return total;
+                }
+
+                var processEntries = function() {
+                    var carbon = parseFloat($("carbon").value);
+                    var condensedcarbon = parseFloat($("condensedcarbon").value);
+                    var oxygen = parseFloat($("oxygen").value);
+                    if (isNaN(carbon) || isNaN(condensedcarbon) || isNaN(oxygen)) {
+                        alert("All entries must be a number.");
+                    } else if (carbon <= -1 || condensedcarbon <= -1 || oxygen <= -1) {
+                        alert("All entries must be equal to or greater than zero.");
+                    } else {
+                        $("total").value = calculateTotal(carbon, condensedcarbon, oxygen);
+                    }
+                };
+
+                window.onload = function() {
+                    $("calculate").onclick = processEntries;
+                };
+            </script>
+        </head>
+        <body>
+            <div>
+                <main>
+                    <input type="button" id="calculate" value="Calculate">&nbsp
+                    <label>Total:</label>
+                    <input type="textbox" id="total" disable="disable">
+                </main>
+                <main>
+                    <label>Carbon (12.0):</label>
+                    <input type="textbox" id="carbon" value="0" class="raw"><br><br>
+                    <label>Condensed Carbon (24.0):</label>
+                    <input type="textbox" id="condensedcarbon" value="0" class="raw"><br><br>
+                    <label>Oxygen (34.0):</label>
+                    <input type="textbox" id="oxygen" value="0" class="raw"><br><br>
+                </main>
+            </div>
+        </body>
+    </html>
