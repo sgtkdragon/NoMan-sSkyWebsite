@@ -7,8 +7,8 @@
                     return document.getElementById(id);
                 };
 
-                var calculateTotal = function(carbon, condensedcarbon, oxygen) {
-                    var total = ((12*carbon) + (24*condensedcarbon) + (34*oxygen))
+                var calculateTotal = function(carbon, condensedcarbon, oxygen, dihydrogen) {
+                    var total = ((12*carbon) + (24*condensedcarbon) + (34*oxygen) + (34*dihydrogen))
                     total = total.toFixed(1);
                     return total;
                 }
@@ -17,17 +17,19 @@
                     var carbon = parseFloat($("carbon").value);
                     var condensedcarbon = parseFloat($("condensedcarbon").value);
                     var oxygen = parseFloat($("oxygen").value);
-                    if (isNaN(carbon) || isNaN(condensedcarbon) || isNaN(oxygen)) {
+                    var dihydrogen = parseFloat($("dihydrogen").value);
+                    if (isNaN(carbon) || isNaN(condensedcarbon) || isNaN(oxygen) || isNaN(dihydrogen)) {
                         alert("All entries must be a number.");
-                    } else if (carbon <= -1 || condensedcarbon <= -1 || oxygen <= -1) {
+                    } else if (carbon <= -1 || condensedcarbon <= -1 || oxygen <= -1 || dihydrogen <= -1) {
                         alert("All entries must be equal to or greater than zero.");
                     } else {
-                        $("total").value = calculateTotal(carbon, condensedcarbon, oxygen);
+                        $("total").value = calculateTotal(carbon, condensedcarbon, oxygen, dihydrogen);
                     }
                 };
 
                 window.onload = function() {
                     $("calculate").onclick = processEntries;
+                    $("carbon").focus;
                 };
             </script>
         </head>
@@ -45,9 +47,9 @@
                     <input type="textbox" id="condensedcarbon" value="0" class="raw"><br><br>
                     <label>Oxygen (34.0):</label>
                     <input type="textbox" id="oxygen" value="0" class="raw"><br><br>
-                    <!--<label>Di-hydrogen (34.0):</label>
+                    <label>Di-hydrogen (34.0):</label>
                     <input type="textbox" id="dihydrogen" value="0" class="raw"><br><br>
-                    <label>Deuterium (34.0):</label>
+                    <!--<label>Deuterium (34.0):</label>
                     <input type="textbox" id="deuterium" value="0" class="raw"><br><br>
                     <label>Tritium (6.0):</label>
                     <input type="textbox" id="tritium" value="0" class="raw"><br><br>
