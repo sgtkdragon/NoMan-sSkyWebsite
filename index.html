@@ -7,8 +7,8 @@
                     return document.getElementById(id);
                 };
 
-                var calculateTotal = function(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite) {
-                    var total = ((12*carbon) + (24*condensedcarbon) + (34*oxygen) + (34*dihydrogen) + (34*deuterium) + (6*tritium) + (14*ferritedust) + (28*pureferrite) + (82*magnetisedferrite))
+                var calculateTotal = function(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite, silicatepowder, sodium, sodiumnitrate, cobalt, ionisedcobalt) {
+                    var total = ((12*carbon) + (24*condensedcarbon) + (34*oxygen) + (34*dihydrogen) + (34*deuterium) + (6*tritium) + (14*ferritedust) + (28*pureferrite) + (82*magnetisedferrite) + (2*silicatepowder) + (41*sodium) + (82*sodiumnitrate) + (198*cobalt) + (401*ionisedcobalt))
                     total = total.toFixed(1);
                     return total;
                 }
@@ -23,12 +23,17 @@
                     var ferritedust = parseFloat($("ferritedust").value);
                     var pureferrite = parseFloat($("pureferrite").value);
                     var magnetisedferrite = parseFloat($("magnetisedferrite").value);
-                    if (isNaN(carbon) || isNaN(condensedcarbon) || isNaN(oxygen) || isNaN(dihydrogen) || isNaN(deuterium) || isNaN(tritium) || isNaN(ferritedust) || isNaN(pureferrite) || isNaN(magnetisedferrite)) {
+                    var silicatepowder = parseFloat($("silicatepowder").value);
+                    var sodium = parseFloat($("sodium").value);
+                    var sodiumnitrate = parseFloat($("sodiumnitrate").value);
+                    var cobalt = parseFloat($("cobalt").value);
+                    var ionisedcobalt = parseFloat($("ionisedcobalt").value);
+                    if (isNaN(carbon) || isNaN(condensedcarbon) || isNaN(oxygen) || isNaN(dihydrogen) || isNaN(deuterium) || isNaN(tritium) || isNaN(ferritedust) || isNaN(pureferrite) || isNaN(magnetisedferrite) || isNaN(silicarepowder) || isNaN(sodium) || isNaN(sodiumnitrate) || isNaN(cobalt) || isNaN(ionisedcobalt)) {
                         alert("All entries must be a number.");
-                    } else if (carbon <= -1 || condensedcarbon <= -1 || oxygen <= -1 || dihydrogen <= -1 || deuterium <= -1 || tritium <= -1 || ferritedust <= -1 || pureferrite <= -1 || magnetisedferrite <= -1) {
+                    } else if (carbon <= -1 || condensedcarbon <= -1 || oxygen <= -1 || dihydrogen <= -1 || deuterium <= -1 || tritium <= -1 || ferritedust <= -1 || pureferrite <= -1 || magnetisedferrite <= -1 || silicatepowder <= -1 || sodium <= -1 || sodiumnitrate <= -1 || cobalt <= -1 || ionisedcobalt <= -1) {
                         alert("All entries must be equal to or greater than zero.");
                     } else {
-                        $("total").value = calculateTotal(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite);
+                        $("total").value = calculateTotal(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite, silicatepowder, sodium, sodiumnitrate, cobalt, ionisedcobalt);
                     }
                 };
 
@@ -40,12 +45,12 @@
         </head>
         <body>
             <div>
-                <main>
+                <main class="caltot">
                     <input type="button" id="calculate" value="Calculate">&nbsp
                     <label>Total:</label>
                     <input type="textbox" id="total" disable="disable">
                 </main>
-                <main>
+                <main class="rawmaterials">
                     <label>Carbon (12.0):</label>
                     <input type="number" id="carbon" value="0" class="raw"><br><br>
                     <label>Condensed Carbon (24.0):</label>
@@ -64,7 +69,7 @@
                     <input type="number" id="pureferrite" value="0" class="raw"><br><br>
                     <label>Magnetised Ferrite (82.0):</label>
                     <input type="number" id="magnetisedferrite" value="0" class="raw"><br><br>
-                    <!--<label>Silicate Powder (2.0):</label>
+                    <label>Silicate Powder (2.0):</label>
                     <input type="number" id="silicatepowder" value="0" class="raw"><br><br>
                     <label>Sodium (41.0):</label>
                     <input type="number" id="sodium" value="0" class="raw"><br><br>
@@ -74,7 +79,7 @@
                     <input type="number" id="cobalt" value="0" class="raw"><br><br>
                     <label>Ionised Cobalt (401.0):</label>
                     <input type="number" id="ionisedcobalt" value="0" class="raw"><br><br>
-                    <label>Salt (299.0):</label>
+                    <!--<label>Salt (299.0):</label>
                     <input type="number" id="salt" value="0" class="raw"><br><br>
                     <label>Chlorine (602.0):</label>
                     <input type="number" id="chlorine" value="0" class="raw"><br><br>
