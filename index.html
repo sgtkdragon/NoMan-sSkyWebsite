@@ -7,8 +7,8 @@
                     return document.getElementById(id);
                 };
 
-                var calculateTotal = function(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite, silicatepowder, sodium, sodiumnitrate, cobalt, ionisedcobalt, salt, chlorine, cytophosphate, copper) {
-                    var total = ((12*carbon) + (24*condensedcarbon) + (34*oxygen) + (34*dihydrogen) + (34*deuterium) + (6*tritium) + (14*ferritedust) + (28*pureferrite) + (82*magnetisedferrite) + (2*silicatepowder) + (41*sodium) + (82*sodiumnitrate) + (198*cobalt) + (401*ionisedcobalt) + (299*salt) + (602*chlorine) + (201*cytophosphate) + (121*copper))
+                var calculateTotal = function(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite, silicatepowder, sodium, sodiumnitrate, cobalt, ionisedcobalt, salt, chlorine, cytophosphate, copper, cadmium, emeril, indium, chromaticmetal, paraffinium, pyrite, ammonia, uranium, dioxite, phosphorus, mordite) {
+                    var total = ((12*carbon) + (24*condensedcarbon) + (34*oxygen) + (34*dihydrogen) + (34*deuterium) + (6*tritium) + (14*ferritedust) + (28*pureferrite) + (82*magnetisedferrite) + (2*silicatepowder) + (41*sodium) + (82*sodiumnitrate) + (198*cobalt) + (401*ionisedcobalt) + (299*salt) + (602*chlorine) + (201*cytophosphate) + (121*copper) + (234*cadmium) + (348*emeril) + (464*indium) + (245*chromaticmetal) + (62*paraffinium) + (62*pyrite) + (62*ammonia) + (62*uranium) + (62*dioxite) + (62*phosphorus) + (40*mordite))
                     total = total.toFixed(1);
                     return total;
                 }
@@ -32,12 +32,23 @@
                     var chlorine = parseFloat($("chlorine").value);
                     var cytophosphate = parseFloat($("cytophosphate").value);
                     var copper = parseFloat($("copper").value);
-                    if (isNaN(carbon) || isNaN(condensedcarbon) || isNaN(oxygen) || isNaN(dihydrogen) || isNaN(deuterium) || isNaN(tritium) || isNaN(ferritedust) || isNaN(pureferrite) || isNaN(magnetisedferrite) || isNaN(silicatepowder) || isNaN(sodium) || isNaN(sodiumnitrate) || isNaN(cobalt) || isNaN(ionisedcobalt) || isNaN(salt) || isNaN(chlorine) || isNaN(cytophosphate) || isNaN(copper)) {
+                    var cadmium = parseFloat($("cadmium").value);
+                    var emeril = parseFloat($("emeril").value);
+                    var indium = parseFloat($("indium").value);
+                    var chromaticmetal = parseFloat($("chromaticmetal").value);
+                    var paraffinium = parseFloat($("paraffinium").value);
+                    var pyrite = parseFloat($("pyrite").value);
+                    var ammonia = parseFloat($("ammonia").value);
+                    var uranium = parseFloat($("uranium").value);
+                    var dioxite = parseFloat($("dioxite").value);
+                    var phosphorus = parseFloat($("phosphorus").value);
+                    var mordite = parseFloat($("mordite").value);
+                    if (isNaN(carbon) || isNaN(condensedcarbon) || isNaN(oxygen) || isNaN(dihydrogen) || isNaN(deuterium) || isNaN(tritium) || isNaN(ferritedust) || isNaN(pureferrite) || isNaN(magnetisedferrite) || isNaN(silicatepowder) || isNaN(sodium) || isNaN(sodiumnitrate) || isNaN(cobalt) || isNaN(ionisedcobalt) || isNaN(salt) || isNaN(chlorine) || isNaN(cytophosphate) || isNaN(copper) || isNaN(cadmium) || isNaN(emeril) || isNaN(indium) || isNaN(chromaticmetal) || isNaN(paraffinium) || isNaN(pyrite) || isNaN(ammonia) || isNaN(uranium) || isNaN(dioxite) || isNaN(phosphorus) || isNaN(mordite)) {
                         alert("All entries must be a number.");
-                    } else if (carbon <= -1 || condensedcarbon <= -1 || oxygen <= -1 || dihydrogen <= -1 || deuterium <= -1 || tritium <= -1 || ferritedust <= -1 || pureferrite <= -1 || magnetisedferrite <= -1 || silicatepowder <= -1 || sodium <= -1 || sodiumnitrate <= -1 || cobalt <= -1 || ionisedcobalt <= -1 || salt <= -1 || chlorine <= -1 || cytophosphate <= -1 || copper <= -1) {
+                    } else if (carbon <= -1 || condensedcarbon <= -1 || oxygen <= -1 || dihydrogen <= -1 || deuterium <= -1 || tritium <= -1 || ferritedust <= -1 || pureferrite <= -1 || magnetisedferrite <= -1 || silicatepowder <= -1 || sodium <= -1 || sodiumnitrate <= -1 || cobalt <= -1 || ionisedcobalt <= -1 || salt <= -1 || chlorine <= -1 || cytophosphate <= -1 || copper <= -1 || cadmium <= -1 || emeril <= -1 || indium <= -1 || chromaticmetal <= -1 || paraffinium <= -1 || pyrite <= -1 || ammonia <= -1 || uranium <= -1 || dioxite <= -1 || phosphorus <= -1 || mordite <= -1) {
                         alert("All entries must be equal to or greater than zero.");
                     } else {
-                        $("total").value = calculateTotal(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite, silicatepowder, sodium, sodiumnitrate, cobalt, ionisedcobalt, salt, chlorine, cytophosphate, copper);
+                        $("total").value = calculateTotal(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite, silicatepowder, sodium, sodiumnitrate, cobalt, ionisedcobalt, salt, chlorine, cytophosphate, copper, cadmium, emeril, indium, chromaticmetal, paraffinium, pyrite, ammonia, uranium, dioxite, phosphorus, mordite);
                     }
                 };
 
@@ -91,7 +102,7 @@
                     <input type="number" id="cytophosphate" value="0" class="raw"><br><br>
                     <label>Copper (121.0):</label>
                     <input type="number" id="copper" value="0" class="raw"><br><br>
-                    <!--<label>Cadmium (234.0):</label>
+                    <label>Cadmium (234.0):</label>
                     <input type="number" id="cadmium" value="0" class="raw"><br><br>
                     <label>Emeril (348.0):</label>
                     <input type="number" id="emeril" value="0" class="raw"><br><br>
@@ -113,7 +124,7 @@
                     <input type="number" id="phosphorus" value="0" class="raw"><br><br>
                     <label>Mordite (40.0):</label>
                     <input type="number" id="mordite" value="0" class="raw"><br><br>
-                    <label>Pugneum (138.0):</label>
+                    <!--<label>Pugneum (138.0):</label>
                     <input type="number" id="pugneum" value="0" class="raw"><br><br>
                     <label>Silver (186.0):</label>
                     <input type="number" id="silver" value="0" class="raw"><br><br>
