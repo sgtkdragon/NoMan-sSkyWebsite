@@ -7,8 +7,8 @@
                     return document.getElementById(id);
                 };
 
-                var calculateTotal = function(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust) {
-                    var total = ((12*carbon) + (24*condensedcarbon) + (34*oxygen) + (34*dihydrogen) + (34*deuterium) + (6*tritium) + (14*ferritedust))
+                var calculateTotal = function(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite) {
+                    var total = ((12*carbon) + (24*condensedcarbon) + (34*oxygen) + (34*dihydrogen) + (34*deuterium) + (6*tritium) + (14*ferritedust) + (28*pureferrite) + (82*magnetisedferrite))
                     total = total.toFixed(1);
                     return total;
                 }
@@ -21,12 +21,14 @@
                     var deuterium = parseFloat($("deuterium").value);
                     var tritium = parseFloat($("tritium").value);
                     var ferritedust = parseFloat($("ferritedust").value);
-                    if (isNaN(carbon) || isNaN(condensedcarbon) || isNaN(oxygen) || isNaN(dihydrogen) || isNaN(deuterium) || isNaN(tritium) || isNaN(ferritedust)) {
+                    var pureferrite = parseFloat($("pureferrite").value);
+                    var magnetisedferrite = parseFloat($("magnetisedferrite").value);
+                    if (isNaN(carbon) || isNaN(condensedcarbon) || isNaN(oxygen) || isNaN(dihydrogen) || isNaN(deuterium) || isNaN(tritium) || isNaN(ferritedust) || isNaN(pureferrite) || isNaN(magnetisedferrite)) {
                         alert("All entries must be a number.");
-                    } else if (carbon <= -1 || condensedcarbon <= -1 || oxygen <= -1 || dihydrogen <= -1 || deuterium <= -1 || tritium <= -1 || ferritedust <= -1) {
+                    } else if (carbon <= -1 || condensedcarbon <= -1 || oxygen <= -1 || dihydrogen <= -1 || deuterium <= -1 || tritium <= -1 || ferritedust <= -1 || pureferrite <= -1 || magnetisedferrite <= -1) {
                         alert("All entries must be equal to or greater than zero.");
                     } else {
-                        $("total").value = calculateTotal(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust);
+                        $("total").value = calculateTotal(carbon, condensedcarbon, oxygen, dihydrogen, deuterium, tritium, ferritedust, pureferrite, magnetisedferrite);
                     }
                 };
 
@@ -58,11 +60,11 @@
                     <input type="number" id="tritium" value="0" class="raw"><br><br>
                     <label>Ferrite Dust (14.0):</label>
                     <input type="number" id="ferritedust" value="0" class="raw"><br><br>
-                    <!--<label>Pure Ferrite (28.0):</label>
+                    <label>Pure Ferrite (28.0):</label>
                     <input type="number" id="pureferrite" value="0" class="raw"><br><br>
                     <label>Magnetised Ferrite (82.0):</label>
                     <input type="number" id="magnetisedferrite" value="0" class="raw"><br><br>
-                    <label>Silicate Powder (2.0):</label>
+                    <!--<label>Silicate Powder (2.0):</label>
                     <input type="number" id="silicatepowder" value="0" class="raw"><br><br>
                     <label>Sodium (41.0):</label>
                     <input type="number" id="sodium" value="0" class="raw"><br><br>
