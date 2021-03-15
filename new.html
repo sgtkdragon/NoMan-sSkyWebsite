@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+    <head>
+        <title>No Man's Sky Inventory Price Calculator</title>
+        <script src=""></script>
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div>
+            <main class="caltot">
+                <input type="button" id="calculate" value="Calculate">&nbsp;
+                <label class="total">Total:</label>
+                <label class="text" id="total"></label>
+            </main><br>
+            <main class="rawmaterials"><!--orangebackground-->
+                <h2>Raw Materials</h2>
+                Carbon 12
+                Condensed Carbon 24
+                Oxygen 34
+                Di-hydrogen 34
+                Deuterium 34
+                Tritium 6
+                Ferrite Dust 14
+                Pure Ferrite 28
+                Magnetised Ferrite 82
+                Silicate Powder 2
+                Sodium 41
+                Sodium Nitrate 82
+                Cobalt 198
+                Ionised Cobalt 401
+                Salt 299
+                Chlorine 602
+                Cyto-Phosphate 201
+                Copper 121
+                Cadmium 234
+                Emeril 348
+                Indium 464
+                Chromatic Metal 245
+                Paraffinium 62
+                Pyrite 62
+                Ammonia 62
+                Uranium 62
+                Dioxite 62
+                Phosphorus 62
+                Basalt 62
+                Mordite 40
+                Pugneum 138
+                Silver 186
+                Gold 353
+                Platinum 505
+                Sulphurine 20
+                Radon 20
+                Nitrogen 20
+                Activated Copper 245
+                Activated Cadmium 450
+                Activated Emeril 696
+                Activated Indium 949
+                Fungal Mould 16
+                Frost Crystal 12
+                Gamma Root 16
+                Cactus Flesh 28
+                Solanium 70
+                Star Bulb 32
+                Marrow Bulb 41
+                Kelp Sac 41
+                Faecium 30
+                Residual Goop 20
+                Runaway Mould 20
+                Rusted Metal 20
+                Living Slime 20
+                Viscous Fluids 20
+            </main>
+            <main ><!--blue-->
+                Metal Plating 800
+                Carbon Nanotubes 500
+                Hermetic Seal 800
+                Microprocessor 2000
+                Hydraulic Wiring 3600
+                Quantum Computer 4200
+                Magnetic Resonator 6150
+                Solar Mirror 6150
+                Amino Chamber 12300
+                Wiring Loom 25000
+                Repair Kit 450
+                Life Support Gel 200
+                Ion Battery 200
+                Starshield Battery 500
+                Di-Hydrogen Jelly 200
+                Starship Launch Fuel 450
+                Hydrothermal Fuel Cell 7200
+                Unstable Plasma 5750
+                Projectile Ammunition 1
+                Antimatter Housing 6500
+                Antimatter 5233
+                Warp Hypercore 45750
+                Aronium 25000
+                Dirty Bronze 25000
+                Herox 25000
+                Lemmium 25000
+                Magno-Gold 25000
+                Grantine 25000
+                Geodesite 150000
+                Iridesite 150000
+                Frigate Fuel 50 20000
+                Frigate Fuel 100 40000
+                Frigate Fuel 200 80000
+                Mind Control Device 75000
+                Holographic Analyser 75000
+                Mineral Compressor 75000
+                Explosive Drones 75000
+                Fuel Oxidiser 75000
+                Acid 188000
+                Lubricant 110000
+                Glass 200
+                Heat Capacitor 180000
+                Poly Fibre 130000
+                Unstable Gel 50000
+                Liquid Explosive 800500
+                Living Glass 566000
+                Circuit Board 916250
+                Thermic Condensate 50000
+                Enriched Carbon 50000
+                Nitrogen Salt 5000
+                Organic Catalyst 320000
+                Semiconductor 320000
+                Hot Ice 320000
+                Fusion Accelerant 1500000
+                Superconductor 1500000
+                Cryo-Pump 1500000
+                Protable Reactor 4200000
+                Quantum Processor 4400000
+                Cryogenic Chamber 3800000
+                Fusion Ingnitor 15600000
+                Stasis Device 15600000
+            </main>
+            <main ><!--yellow-->
+                Navigation Data 1000
+                Drop Pod Coordinate Data 85000
+                Log Encryption Key 1500
+                Defence Chit 10000
+                Salvaged Data 50000
+                Factory Override Unit 50000
+                Salvaged Frigate Module 95000
+                Storage Augmentation 95000
+                Cargo Bulkhead 95000
+                Multi-Tool Expansion Slot 95000
+            </main>
+            <main ><!--green-->
+                Nanotube Crate 1000
+                Self-Repairing Heridium 6000
+                Optical Solvent 15000
+                Five Dimensional Torus 30000
+                Superconducting Fibre 50000
+                Decrypted User Data 1000
+                Star Silk 6000
+                Comet Droplets 15000
+                Ion Sphere 30000
+                Teleport Coordinators 50000
+                Enormous Metal Cog 1000
+                Non-Stick Piston 6000
+                Six-Pronged Decoupler 15000
+                Holographic Crankshaft 30000
+                High Capacity Vector Compressor 50000
+                Spark Canister 1000
+                Industrial-Grade Battery 6000
+                Ohmic Gel 15000
+                Experimental Power Fluid 30000
+                Fusion Core 50000
+                De-Scented Pheromone Bottle 1000
+                Neutron Microscope 6000
+                Instability Injector 15000
+                Organic Piping 30000
+                Neural Duct 50000
+                Dirt 1000
+                Unrefined Pyrite Grease 6000
+                Bromide Salt 15000
+                Polychromatic Zirconium 30000
+                Re-Latticed Arc Crystal 50000
+                Decommissioned Circuit Board 1000
+                Welding Soap 6000
+                Ion Capacitor 15000
+                Autonomous Positioning Unit 30000
+                Quantum Accelerator 50000
+            </main>
+            <main ><!--purple-->
+                Quad Servo 20000
+                Walker Brain 35000
+                Geode 3280
+                Crystal Fragment 3280
+                Tritium Hypercluster 3280
+                Gold Nugget 3280
+                Glowing Mineral 3280
+                Anomaly Detector 3280
+                Emergency Broadcast Receiver 3280
+                Sac Venom 11685
+                Gravitino Ball 12445
+                Albumen Pearl 9025
+                Vortex Cube 5800
+                Larval Core 69875
+                Storm Crystal 129150
+                Living Pearl 4797
+                Crystal Sulphide 7410
+                Hadal Core 92625
+                Hypnotic Eye 57000
+                Vy'keen Tablet 1250
+                Divergence Cube 3015
+                Mind Arc 1000
+                Soul Engine 1000
+                Gek Relic 23375
+                GekNip 20625
+                NipNip Buds 17776
+                Vy'keen Effigy 24750
+                Vy'keen Dagger 11688
+                Korvax Casing 22000
+                Korvax Convergence Cube 13063
+                Captured Nanode 1000
+                Englobed Shade 1000
+                Noospheric Orb 1000
+                Dark Matter 1000
+                Dawn's End 1000
+                Photic Jade 1000
+                State Phasure 1000
+                Novae Reclaiment 1000
+                Modified Quanta 1000
+                Heart of the Sun 1000
+                Hex Core 16
+                Void Egg 3200
+            </main>
+            <main ><!--red-->
+                Creature Pellets 20
+                Sticky 'Honey' 3200
+                Warm Proto-Milk 3200
+                Giant Egg 3200
+                Regis Grease 3200
+                Leopard-Fruit 3200
+                Tall Eggs 3200
+                Fresh Milk 3200
+                Carb 'Apple' 3200
+                Bone Nuggets 3200
+                Foraged Mushroom 3200
+                Chewy Wires 3200
+                Creature Egg 1600
+                Wild Milk 1600
+                Salty Fingers 1400
+                Meaty Wings 1400
+                Fiendish Roe 1400
+                Offal Sac 1400
+                ProtoSausage 1400
+                Diplo Chunks 1400
+                Scaly Meat 1400
+                Feline Liver 1400
+                Strider Sausage 1400
+                Raw Steak 1400
+                Leg Meat 1400
+                Scooped Innards 1400
+                Crystal Flesh 1400
+                Latticed Sinew 1400
+                Crunchy Wings 1400
+                Lumpy Brainstem 1400
+                Dirty Meat 1400
+                Meaty Chunks 1000
+                Impulse Beans 800
+                Pilgrim Berry 300
+                Fireberry 800
+                Solartillo 300
+                Frozen Tubers 800
+                Glass Grains 300
+                Jade Peas 800
+                Non-Toxic Mushroom 300
+                Grahberry 800
+                Sievert Beans 300
+                Aloe Flesh 800
+                Cactus Nectar 300
+                Hexaberry 1600
+                Heptaploid Wheat 800
+                Sweetroot 800
+                Pulpy Roots 800
+                Marrow Flesh 1400
+                Kelp Rice 1200
+                Wild Yeast 600
+                Meat Flakes 800
+                Silicon Egg 500
+                Baked Eggs 2200
+                Refined Flour 1800
+                Processed Sugar 1600
+                Synthetic Honey
+                Steamed Vegetables
+                Processed Meat
+                Smoked Meat
+                Churned Butter
+                Proto-Butter
+                Cream
+                Proto-Cream
+                Crunchy Caramel
+                Clarified Oil
+                Proto-Oil
+                Pastry
+                Bread
+                Bone Milk
+                Bone Butter
+                Boney Cream
+                Viscous Custard
+                Monstrous Custard
+                Stellar Custard
+                Delicate Meringue
+                Lumpen Doughnut
+                Proto-Deignet
+                Bittersweet Cocoa
+                Sweetened Butter
+                Sweetened Proto-Butter
+                Honey Butter
+                Honied Proto-Butter
+                Gooey ProtoButter
+                Gooey Butter
+                Tangy Cheese
+                ProtoCheese
+                Dough
+                Anomalous Jam
+                Ever-burning Jam
+                Grahj'am
+                Cactus Jelly
+                Wriggling Jam
+                Custard Doughnut
+                Salty Doughnut
+                Monstrous Doughnut
+                The Stellarator
+                Honey Doughnut
+                Honeybutter Doughnut
+                Gooey ProtoDoughnut
+                Caramel Doughnut
+                Cocoa Doughnut
+                Proteinous Doughnut
+                Jam Doughnut
+                Wriggling Doughnut
+                Anomalous Doughnut
+                Pie Crust
+                Mystery Meat Pie
+                Smokey Meat Pie
+                High-Fibre Pie
+                Fish Pie
+                Huanted Pie
+                Chewy Organ Pie
+                Proto-Sausage Pie
+                Legs-in-Pastry'
+                Fruity Pudding
+                Glowing Pie
+                Fungal Tart
+                Jam Tart
+                Anomalous Tart
+                Spikey Tart
+                Honey Tart
+                Mushed Root Pie
+                Solidified Grease Pie
+                Jellied Fur Tart
+                Wriggling Tart
+                Cocoa Tart
+                Caramel Tart
+                Creamy Treat
+                Custard Tart
+                The Spawning Tart
+                Stellar Custard Tart
+                Baked Cheese Tart
+                Chessy Vegetable Pie
+                The Toothbreaker
+                Gristle Pie
+                Leathery Tart
+                The Pie of Knowledge
+                Gritty Meat Pie
+                Earthy Pie
+                Mystery Meat Stew
+                Fibrous Stew
+                Stewed Organs
+                Crystalline Soup
+                Well-Stirred Stew
+                Gelatinous Goop
+                Soiled Soup
+                Chewy 'Dumpling' Stew
+                Omelette
+                Whispering Omelette
+                Proto-Omelette
+                Parasitic Omelette
+                Scrambled Marrow
+                Fungal Omelette
+                Root Juice
+                Prilgrim's Tonic
+                Fire Water
+                Refeshing Drink
+                Salty Juice
+                Flavoursome Sauce
+                Scorching Sauce
+                Creamy Sauce
+                Partially-Liquid Cheese
+                Tangy Organ Surprise
+                Tangy Vegetable Stew
+                Cheese-and-Flesh Stew
+                Creamed Organ Soup
+                Cream of Vegetables
+                Thick Meat Stew
+                Spicy Fleshballs
+                Flavoursome Organs
+                Delicious Vegetable Stew
+                Herb-Encrusted Flesh
+                Cake Batter
+                Proto-Batter
+                Thick, Sweet Batter
+                Wailing Batter
+                Extra-Fluffy Batter
+                Writhing, Roiling Batter
+                Glittering Honey Cake
+                Cream Buns
+                Questionably Sweet Cake
+                Chocolate Cake
+                Caramel-Encrusted Cake
+                Spiced 'Apple' Cake
+                Esophageal Surprise
+                Traditional Cake
+                Ever-Boiling Cake
+                Perpertual Cake
+                Custard Fancy
+                Driney Delight
+                Horrifying, Gooey Delight
+                Interstellar Fancy
+                Horrifying Mush
+                Abyssal Stew
+                Iced Screams
+                Ice Cream
+                Briney Rime
+                Deathly-Cold Ice Cream
+                Stellar Ice Cream
+                Chocolate Ice Cream
+                Caramel Ice Cream
+                Fruity Ice Cream
+                Apple' Ice Cream
+                Honey Ice Cream
+                Perpertual Ice Cream
+                Vy'ice Cream
+                Icey Marrow
+                Spiced Ice
+                Most Curous Cake
+                Cream Curiosity
+                Chocolate Curiosity
+                Caramel Curiosity
+                Apple' Curiosity
+                Prickley Curiosity
+                Jam Curosity
+                Startling Fancy
+                Unsolvable Turnover
+                Custard Curiosity
+                Salty Surprise
+                Interstellar Curiosity
+                Honey-Soaked Fancy
+                Sweet Cream Dreams
+                Gooey Chocolate Cake
+                Gooey Caramel Cake
+                Gooey Fruit Surprise
+                Honied Throat-Stickers
+                Jam Oozers
+                Gooey Moutherburner
+                Perpertual Honeycake
+                Gooey Custard Fancy
+                Salt-Laced Honey Cake
+                Starbirth Delight
+                Doomed Cream Cake
+                Haunted Chocolate Dreams
+                Wailing Carmael Cake
+                Apple' Cake Of Lost Souls
+                Choking Monstrosity Cake
+                Appalling Jam Sponge
+                Cake of Burning Dread
+                Cake of Glass
+                Honied Angel Cake
+                Gooey Honey Puff
+                Extra-Fluffy Cream Cake
+                Chocolate Dream
+                Fullfy Caramel Delight
+                Angelic Fruitcake
+                Soft and Spiky Surprise
+                Jam Fluffer
+                Burning Jam Fulffer
+                Perpetual Jam Fluffer
+                Soft Custard Fancy
+                Tortured Honey Cake
+                Itching, Creeping Honey Sponge
+                Unbound Cream Horn
+                Volatile Chocolate Fancy
+                Caramelised Nightmare
+                Cake of Sin
+                Fluffy Throatripper
+                Writhing Jam Puff
+                Burning Jam Surprise
+                Unbound Monstrosity
+                Cake of the Lost
+                Gooey Screamer
+                Monstrous Honey Cake
+                Honied Proto-Cake
+            </main>
+            </div>
+        </body
+    </html>
